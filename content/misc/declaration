@@ -1,0 +1,35 @@
+% =============================================================
+%  DECLARATION OF AUTHORSHIP
+%  Most universities prescribe the exact wording. Replace the
+%  text below with your examination office's official version.
+% =============================================================
+\chapter*{Declaration of Authorship}
+\addcontentsline{toc}{chapter}{Declaration of Authorship}
+\markboth{Declaration of Authorship}{Declaration of Authorship}
+
+\noindent
+\begin{tabular}{@{}ll@{}}
+  Name:         & \thesisauthor \\
+  \ifdefempty{\thesisstudentid}{}{%
+  Student ID:   & \thesisstudentid \\}
+  Program:      & \thesisprogram \\
+  Thesis:       & \thesistitle \\
+\end{tabular}
+
+\vspace{2em}
+\noindent
+\todo{Replace with your university's official wording.}
+I hereby declare that I have written this thesis independently and
+have not used any sources or aids other than those indicated. All
+passages taken directly or indirectly from other sources have been
+marked as such. Any use of AI-based tools is documented in the
+appendix. This thesis has not been submitted in the same or a
+similar form to any other examination board.
+
+\vspace{4em}
+\noindent
+\begin{tabular}{@{}p{6cm}p{6cm}@{}}
+  \thesislocation, \thesisdate & \\[-0.8em]
+  \rule{5.5cm}{0.4pt} & \rule{5.5cm}{0.4pt} \\
+  Place, date & Signature
+\end{tabular}

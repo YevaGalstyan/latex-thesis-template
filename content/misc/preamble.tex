@@ -1,0 +1,91 @@
+% =============================================================
+%  PREAMBLE: packages, fonts, layout and helper commands
+%  You normally don't need to edit this file.
+% =============================================================
+
+% --- Language and encoding -----------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[\thesislanguage]{babel}
+\usepackage{csquotes}             % language-aware quotation marks
+
+% --- Fonts ---------------------------------------------------
+% Palatino for text and math. Works with pdfLaTeX (the default
+% recipe). Remove the next two lines to use the default
+% Latin Modern font instead.
+\usepackage{mathpazo}
+\linespread{1.05}                 % Palatino needs a little extra leading
+\usepackage{eurosym}              % \euro{} symbol
+\usepackage{microtype}            % better spacing and line breaks
+
+% --- Page layout ---------------------------------------------
+\usepackage[a4paper, top=3cm, bottom=3cm,
+            inner=3cm, outer=2.5cm,
+            headheight=15pt]{geometry}
+\usepackage{setspace}
+\onehalfspacing                   % many universities require 1.5 spacing
+
+% Avoid single lines at the top or bottom of a page
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% --- Header and footer ---------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+% Chapter opening pages: page number only
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}}
+
+% --- Maths ---------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}              % numbers and units: \SI{5}{\kilo\gram}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% --- Figures and tables --------------------------------------
+\usepackage{graphicx}
+\graphicspath{{figures/}{assets/}}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}             % \toprule, \midrule, \bottomrule
+\usepackage{longtable}            % tables spanning several pages
+\usepackage{multirow}
+\usepackage{float}                % [H] placement
+
+% --- Lists, code and algorithms ------------------------------
+\usepackage{enumitem}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small, breaklines=true,
+        frame=single, numbers=left, numberstyle=\tiny}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+% --- Abbreviations -------------------------------------------
+\usepackage[printonlyused]{acronym}
+
+% --- Bibliography --------------------------------------------
+% Change style= to match your field, e.g. numeric, ieee, apa
+\usepackage[backend=biber, style=authoryear,
+            maxcitenames=2, dashed=false]{biblatex}
+\addbibresource{references.bib}
+
+% --- Helper commands -----------------------------------------
+\usepackage{xcolor}
+% \todo{...} prints a red note. Search for "TODO" before submitting!
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{TODO:} #1}}
+\usepackage{etoolbox}
+\usepackage{xcolor}
+
+% --- Links and cross-references (load these last) ------------
+\usepackage[hidelinks, bookmarksnumbered]{hyperref}
+\usepackage[nameinlink]{cleveref} % \cref{fig:x} -> "Figure 1.2"
+\hypersetup{
+  pdftitle={\thesistitle},
+  pdfauthor={\thesisauthor},
+}

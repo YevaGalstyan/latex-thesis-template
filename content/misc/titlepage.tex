@@ -1,0 +1,57 @@
+% =============================================================
+%  TITLE PAGE
+%  All values come from thesis-config.tex.
+%  Empty values in the config are skipped automatically.
+% =============================================================
+\begin{titlepage}
+  \centering
+
+  % Logo (only if set in thesis-config.tex)
+  \ifdefempty{\thesislogo}{}{%
+    \includegraphics[width=0.5\textwidth]{\thesislogo}\par
+    \vspace{1.5cm}}
+
+  {\Large \thesisuniversity\par}
+  \vspace{0.3cm}
+  {\large \thesisdepartment\par}
+
+  \vspace*{\stretch{1}}
+
+  \rule{\linewidth}{1pt}\par
+  \vspace{0.6cm}
+  {\huge\bfseries \thesistitle\par}
+  \ifdefempty{\thesissubtitle}{}{%
+    \vspace{0.4cm}
+    {\Large \thesissubtitle\par}}
+  \vspace{0.6cm}
+  \rule{\linewidth}{1pt}\par
+
+  \vspace*{\stretch{1}}
+
+  {\Large \thesistype\par}
+  \vspace{0.2cm}
+  {\large submitted for the degree of\par}
+  \vspace{0.2cm}
+  {\large \thesisdegree\par}
+  \vspace{0.2cm}
+  {\large \thesisprogram\par}
+
+  \vspace*{\stretch{1}}
+
+  {\Large\bfseries \thesisauthor\par}
+  \ifdefempty{\thesisstudentid}{}{%
+    \vspace{0.2cm}
+    {\large Student ID: \thesisstudentid\par}}
+
+  \vspace*{\stretch{1}}
+
+  \begin{tabular}{rl}
+    Supervisor:   & \thesissupervisor \\
+    \ifdefempty{\thesiscosupervisor}{}{%
+    Co-supervisor: & \thesiscosupervisor \\}
+  \end{tabular}
+
+  \vspace*{\stretch{1}}
+
+  {\large Submitted on \thesisdate\par}
+\end{titlepage}
