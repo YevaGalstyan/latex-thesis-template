@@ -1,0 +1,78 @@
+% =============================================================
+%  MAIN DOCUMENT
+%  Build with:  latexmk          (uses .latexmkrc)
+%  or in VS Code: save any .tex file.
+%
+%  Personal details  -> content/misc/thesis-config.tex
+%  Packages, layout  -> content/misc/preamble.tex
+%  Your text         -> content/<chapter>/...
+% =============================================================
+
+% For double-sided printing, replace "oneside" with "twoside".
+\documentclass[12pt, a4paper, oneside]{report}
+
+\input{content/misc/thesis-config}
+\input{content/misc/preamble}
+
+\begin{document}
+
+% -------------------------------------------------------------
+%  Front matter (Roman page numbers)
+% -------------------------------------------------------------
+\input{content/misc/titlepage}
+
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\input{content/misc/abstract}
+\input{content/misc/acknowledgements}   % optional
+
+\tableofcontents
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\input{content/misc/abbreviations}
+\input{content/misc/symbols}            % optional
+
+% -------------------------------------------------------------
+%  Main matter (Arabic page numbers)
+% -------------------------------------------------------------
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{content/01_introduction/index}
+\input{content/02_background/index}
+\input{content/03_methodology/index}
+\input{content/04_results/index}
+\input{content/05_discussion/index}
+\input{content/06_conclusion/index}
+
+% -------------------------------------------------------------
+%  Bibliography
+% -------------------------------------------------------------
+\cleardoublepage
+\phantomsection
+\printbibliography[heading=bibintoc]
+
+% -------------------------------------------------------------
+%  Appendix (chapters lettered A, B, ...)
+% -------------------------------------------------------------
+\appendix
+\input{content/appendix/index}
+\input{content/misc/ai-usage}           % optional
+
+% -------------------------------------------------------------
+%  Declaration (usually the very last page)
+% -------------------------------------------------------------
+\input{content/misc/declaration}
+
+\end{document}
