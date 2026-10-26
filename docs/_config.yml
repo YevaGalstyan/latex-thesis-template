@@ -1,0 +1,28 @@
+# GitHub Pages configuration for the documentation site.
+# Settings → Pages → Deploy from a branch → main → /docs
+# The Markdown files in this folder still read normally on GitHub.
+
+title: LaTeX Thesis Template
+description: Write your thesis in LaTeX locally. Free, offline, no compile limits.
+
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links     # turns links to .md files into page links
+
+relative_links:
+  enabled: true
+
+# Just the Docs options
+search_enabled: true
+heading_anchors: true
+color_scheme: light
+aux_links:
+  "View on GitHub": "https://github.com/YevaGalstyan/latex-thesis-template"
+aux_links_new_tab: true
+back_to_top: true
+back_to_top_text: "Back to top"
+footer_content: >-
+  Released under the
+  <a href="https://github.com/YevaGalstyan/latex-thesis-template/blob/main/LICENSE">MIT No Attribution License</a>.
+  Tested on macOS; Windows and Linux reports welcome.
