@@ -1,5 +1,55 @@
 {
-    "files.watcherExclude": {
-        "**/target/**": true
-    }
+  // ---------- LaTeX Workshop: building ----------
+  // Use latexmk with our .latexmkrc (pdfLaTeX + biber)
+  "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)",
+  // Rebuild every time you save a .tex file
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  // Keep generated files between builds (faster rebuilds)
+  "latex-workshop.latex.autoClean.run": "never",
+
+  // ---------- LaTeX Workshop: PDF preview ----------
+  // Open the PDF in a tab next to your text
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  // ---------- Editor ----------
+  "editor.wordWrap": "on",
+  "files.encoding": "utf8",
+
+  // Hide build files from the file explorer
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.bbl": true,
+    "**/*.bcf": true,
+    "**/*.blg": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.fls": true,
+    "**/*.lof": true,
+    "**/*.log": true,
+    "**/*.lot": true,
+    "**/*.out": true,
+    "**/*.run.xml": true,
+    "**/*.synctex.gz": true,
+    "**/*.toc": true
+  },
+
+  // ---------- LTeX+: grammar and spelling ----------
+  // Change to e.g. "en-GB" or "de-DE" to match \thesislanguage
+  "ltex.language": "en-US",
+  // Tell LTeX+ how to read template commands, so it
+  // doesn't flag \ac{GAN} or \cref{...} as errors
+  "ltex.latex.commands": {
+    "\\ac{}": "dummy",
+    "\\acp{}": "dummy",
+    "\\acs{}": "dummy",
+    "\\acl{}": "dummy",
+    "\\cref{}": "dummy",
+    "\\Cref{}": "dummy",
+    "\\textcite{}": "dummy",
+    "\\parencite{}": "dummy",
+    "\\acro{}{}": "ignore",
+    "\\todo{}": "ignore"
+  },
+
+  // ---------- Code Spell Checker (if installed) ----------
+  "cSpell.language": "en-US"
 }
