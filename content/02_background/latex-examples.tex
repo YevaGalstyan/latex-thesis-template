@@ -1,0 +1,100 @@
+% =============================================================
+%  LATEX CHEAT SHEET
+%  Copy what you need, then delete this file and its \input
+%  line in content/02_background/index.tex.
+% =============================================================
+\section{\LaTeX{} Examples}
+\label{sec:latex-examples}
+
+\subsection{Citations}
+Use \verb|\textcite| when the author is part of the sentence:
+\textcite{goodfellow2014gan} introduced generative adversarial networks.
+Use \verb|\parencite| otherwise: deep learning has changed many
+fields~\parencite{lecun2015deep}.
+
+\subsection{Abbreviations}
+The first \verb|\ac{GAN}| prints the long form: \ac{GAN}.
+Later ones print the short form: \ac{GAN}. Plural: \acp{GAN}.
+
+\subsection{Cross-references}
+Give every figure, table, equation and section a \verb|\label|,
+then refer to it with \verb|\cref|: see \cref{fig:example},
+\cref{tab:example}, \cref{eq:example} and \cref{sec:motivation}.
+Numbers update automatically.
+
+\subsection{Figures}
+Put image files in \texttt{figures/} and refer to them by file name.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{example-image}
+  \caption{A single figure. Replace \texttt{example-image} with your file name.}
+  \label{fig:example}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Left panel}
+    \label{fig:example-a}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Right panel}
+    \label{fig:example-b}
+  \end{subfigure}
+  \caption{Two subfigures side by side.}
+  \label{fig:example-sub}
+\end{figure}
+
+\subsection{Tables}
+Use \texttt{booktabs} rules and no vertical lines.
+Captions go \emph{above} tables.
+
+\begin{table}[htbp]
+  \centering
+  \caption{An example table with numbers aligned by \texttt{siunitx}.}
+  \label{tab:example}
+  \begin{tabular}{l S[table-format=2.3] S[table-format=3.1]}
+    \toprule
+    Model & {Error} & {Time (\si{\second})} \\
+    \midrule
+    Baseline & 12.345 & 102.5 \\
+    Ours     &  8.210 &  98.0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Equations}
+Numbered equation:
+\begin{equation}
+  \hat{\theta} = \argmin_{\theta} \frac{1}{N} \sum_{i=1}^{N}
+  \bigl( y_i - f_\theta(x_i) \bigr)^2
+  \label{eq:example}
+\end{equation}
+Inline maths: $\mu = \SI{5.2}{\kilo\gram}$, prices in
+\euro{}: \SI{42.10}{\text{\euro}\per\mega\watt\hour}.
+
+\subsection{Algorithms}
+\begin{algorithm}[htbp]
+  \caption{Gradient descent}
+  \label{alg:example}
+  \KwIn{Learning rate $\eta$, initial parameters $\theta_0$}
+  \For{$t = 0, 1, \dots, T-1$}{
+    $\theta_{t+1} \leftarrow \theta_t - \eta \nabla L(\theta_t)$\;
+  }
+  \Return{$\theta_T$}
+\end{algorithm}
+
+\subsection{Code}
+\begin{lstlisting}[language=Python, caption={A short code listing.}]
+def mean(values):
+    return sum(values) / len(values)
+\end{lstlisting}
+
+\subsection{Notes to yourself}
+\todo{Red notes like this one are easy to spot. Remove them all before submitting.}
