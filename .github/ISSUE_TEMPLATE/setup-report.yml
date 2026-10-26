@@ -1,0 +1,35 @@
+name: Setup report
+description: Tell us whether the setup instructions worked on your system
+title: "[Setup] <OS> – <worked / problem>"
+labels: ["setup"]
+body:
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [macOS, Windows, Linux]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: OS version and distribution
+      placeholder: e.g. Windows 11, Ubuntu 24.04, macOS 15
+  - type: dropdown
+    id: tex
+    attributes:
+      label: TeX distribution
+      options: [MacTeX, TeX Live, MiKTeX, Distribution packages (apt/dnf/pacman), Other]
+  - type: dropdown
+    id: result
+    attributes:
+      label: Did the build work?
+      options: [Yes, everything worked, Worked after fixes (described below), No]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What did you do differently, or what went wrong?
+      description: Paste error messages and the commands you ran.
+      render: shell
